@@ -1,0 +1,2 @@
+ALTER TABLE IF EXISTS users
+    DROP COLUMN user_type;

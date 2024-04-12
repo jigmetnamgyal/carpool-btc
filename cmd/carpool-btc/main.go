@@ -2,6 +2,7 @@ package main
 
 import (
 	"carpool-btc/internal/app/api/btc"
+	"carpool-btc/internal/app/api/carpool"
 	"carpool-btc/internal/app/api/users"
 	"carpool-btc/internal/app/middlewares"
 	"carpool-btc/internal/app/utils"
@@ -32,6 +33,8 @@ func main() {
 	authProtected.GET("list_unconfirmed", btc.ListUnConfirmed)
 
 	authProtected.POST("withdraw", btc.Withdraw)
+
+	authProtected.POST("create_carpools", carpool.Create)
 
 	err := r.Run(":" + os.Getenv("PORT"))
 
